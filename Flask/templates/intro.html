@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<script>
+window.addEventListener("load", function(){
+	var node = document.querySelector("[data-loading]");
+	node.setAttribute("data-loading","complete");
+});
+
+</script>
+<style>
+
+[data-loading]{
+  position: fixed;
+  display: block;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  height: 100vh;
+}
+[data-loading] > *{
+  display: block;
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+[data-loading] > *:first-child{
+  top: 0;
+  left: 0;
+  background: black;
+}
+[data-loading] > *:last-child{
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg);
+  background: #85C1E9;
+}
+
+
+[data-loading] > * > *{
+  display: block;
+  position: absolute;
+  width: 10vh;
+  height: 10vh;
+  top: 45vh;
+  right: 0;
+  background: #85C1E9;
+}
+[data-loading] > *:last-child > *{
+  background: black;
+}
+
+[data-loading="complete"]{
+  animation: close 0s forwards;
+  animation-delay: 3s;
+}
+[data-loading="complete"] > *{
+  animation: open 1s forwards;
+  animation-delay: 2s;
+}
+
+@keyframes open{
+  from{ height: 100vh; }
+  to{ height: 0;}
+}
+@keyframes close{
+  to{ z-index: -100;}
+}
+.header {	
+			top:0;	
+			margin:0px;
+			left: 0px;
+			right: 0px;
+			position: fixed;
+			background-color: black ;
+			color: white;
+			box-shadow: 0px 8px 4px black;
+			overflow: hidden;
+			padding-left:20px;
+			font-family: 'Josefin Sans';
+			font-size: 2vw;
+			width: 100%;
+			height:8%;
+			text-align: center;
+		}
+		.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav-right a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.topnav-right a:hover {
+  background-color: #ddd;
+  color: darkred;
+}
+
+.topnav-right a.active {
+  background-color: #565961;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+  padding-right:100px;
+}
+
+body {
+
+  background-color:#17202A ;
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position: 0px 0px;
+  }
+  .button {
+  background-color: #091425; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 16px;
+}
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+form {border: 3px solid #f1f1f1; margin-left:400px;margin-right:400px;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  margin-bottom:18px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #091425;
+  color: white;
+  padding: 14px 20px;
+  margin-bottom:10px;
+  border: none;
+  cursor: pointer;
+  width: 17%;
+  border-radius:4px;
+  font-family:Montserrat;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 30%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+.home{
+	margin:80px;
+	
+  width: 84%;
+  height: 500px;
+  padding-top:10px;
+  padding-left: 30px;  
+  
+}
+.login{
+	margin:80px;
+	box-sizing: content-box;  
+  width: 84%;
+  height: 420px;
+  padding: 30px;  
+  border: 10px solid blue;
+}
+.left,.right{
+ box-sizing: content-box; 
+ height: 400px;
+ margin:20px;
+ border: 10px solid blue;
+}
+
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+<head>
+
+<title>Loading Split</title>
+
+
+</head>
+
+<body style="font-family:'Times New Roman', Times, serif;background-color:tan;">
+
+		<div class="header">    
+ <div style="width:50%;float:left;font-size:2vw;text-align:left;color:darkred; padding-top:1%;padding-left:5%;">Smart Maths Tutor</div>
+  <div class="topnav-right"style="padding-top:0.5%;">
+
+    <a href="{{ url_for('home')}}">HOME</a>
+    <a class="active" href="{{ url_for('intro')}}">ABOUT</a>
+    <a href="{{ url_for('launch')}}">LEARN SHAPE</a>
+  </div>
+</div>
+
+<div style="background-color:#ffffff;">
+
+<div style="width:60%;float:left;">
+<div style="font-size:30px;font-family:Montserrat;padding-left:10px;text-align:center;padding-top:10%;">   
+  <h3 style="font-size= 30; text-align: center; color: darkblue;">WELCOME TO ABOUT PAGE</h3>
+<b>Give the shape and get the formula!!!!</b></div><br><br><br>
+<div style="font-size:20px;font-family:Montserrat;padding-left:70px;padding-right:30px;text-align:justify;">Smart Maths tutor system is a web based graphical user interface where a user gets to draw shapes of mathematical figures such as square, triangle, circle etc. for which the output would be related formulas to the drawn figure. The use of interactive technology in learning for these students is as natural as using a pencil and paper were to past generations.</div><br><br>
+<div style="font-size:20px;font-family:Montserrat;padding-left:70px;padding-right:30px;"><b>Test the Tutor</b>&nbsp;&nbsp;
+<a href="{{ url_for('launch') }}"><button type="submit">Launch</button></a>
+        
+
+</div>
+</div>
+<div style="width:40%;float:right;"><br><br>
+<img src="https://media0.giphy.com/media/3o7buaucmSsxQf1pZK/giphy.gif" style="max-height:100%;max-width:100%;">
+
+</div>
+</div>
+
+<div class="home">
+	
+<br>
+
+
+
+
+</div>
+
+		<div data-loading>
+			<span> <span></span> </span>
+			<span> <span></span> </span>
+		</div>
+
+</body>
+</html>
+
