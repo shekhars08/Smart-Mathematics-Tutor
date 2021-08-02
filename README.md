@@ -1,4 +1,4 @@
-# https://github.com/shekhars08/Smart-Mathematics-Tutor (Smart Mathematics Tutor)
+# https://github.com/shekhars08/Smart-Mathematics-Tutor (Smart Mathematics Tutor Using IBM Watson Studio)
 Smart Maths tutor system is a web based graphical user interface where a user gets to draw shapes of mathematical figures such as square, triangle, circle etc. for which the output would be related formulas to the drawn figure with the help of CNN and model is train and build on IBM cloud.
 
 # Link to the dataset
